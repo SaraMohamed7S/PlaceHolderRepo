@@ -6,6 +6,7 @@ import PlaceHolder.serelization.Comment;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class GetPostComments_POM {
     Pattern Email_pattern = Pattern.compile(regex);
     Matcher matcher;
 
+    @Test(dependsOnGroups = "2ndStep_GetUserPosts" )
     public List<Comment> getCommentsPerPost(List<Integer> postsList) {
         comments_Per_Post = new ArrayList<>();
         commentsList = new ArrayList<>();
@@ -47,6 +49,7 @@ public class GetPostComments_POM {
         return commentsList;
     }
 
+    @Test(dependsOnMethods = "getCommentsPerPost")
     public void validateEmailsFormat(List<Comment> commentsList)
     {
         for (Comment comment : commentsList)

@@ -5,6 +5,7 @@ import PlaceHolder.serelization.User;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class GetUserId_POM
 	boolean idFound;
 	int retrievedUserId;
 
+	@Test (groups = "FirstStep_GetID")
     public String getUserID(String userName)
 	{
         String baseURI = "https://jsonplaceholder.typicode.com";

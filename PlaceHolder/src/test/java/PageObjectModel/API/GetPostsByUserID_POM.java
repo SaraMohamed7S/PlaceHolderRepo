@@ -4,6 +4,8 @@ import PlaceHolder.common.EndPoints;
 import PlaceHolder.serelization.Post;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,8 @@ import static io.restassured.RestAssured.given;
 public class GetPostsByUserID_POM {
     int postIndex;
     ArrayList<Integer> postsList = new ArrayList<>();
+
+    @Test (dependsOnGroups = "FirstStep_GetID" , groups = "2ndStep_GetUserPosts")
     public ArrayList<Integer> getPostsWithUserId(int userID) // pass user ID
     {
         //Posts by user id

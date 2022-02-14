@@ -7,6 +7,7 @@ Feature: As tester i want to validate the emails mentioned in the posts posted b
     And Send request to get Comment that's mentioned into these posts
     Then Validate the emails formats
     Examples:
-      | UserName |
-      | Delphine |
+      | UserName     |
+      | Delphine     |
+      | NotExistName |
 

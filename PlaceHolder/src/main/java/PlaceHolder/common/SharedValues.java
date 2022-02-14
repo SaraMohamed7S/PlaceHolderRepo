@@ -5,6 +5,9 @@ import PlaceHolder.serelization.Comment;
 import java.util.ArrayList;
 import java.util.List;
 public class SharedValues {
+    // This class is implemented to share the variable over the multiple scenario steps
+    // Java encapsulation concept is used
+
     private static int userID;
     private static ArrayList<Integer> posts ;
     private static List<Comment> comments;
@@ -20,7 +23,7 @@ public class SharedValues {
     }
 
     public static void setCommentsList(List<Comment> commentsPerPost) {
-        comments = new ArrayList<Comment>();
+        comments = new ArrayList<>();
         for (int i =0 ; i <commentsPerPost.size();i++)
         {
             comments.add(i , commentsPerPost.get(i));
@@ -28,7 +31,7 @@ public class SharedValues {
     }
 
     public static void setPostsList(ArrayList<Integer> postsPerUserId) {
-        posts = new ArrayList<Integer>();
+        posts = new ArrayList<>();
         for (int i =0 ; i <postsPerUserId.size();i++)
         {
             posts.add(i , postsPerUserId.get(i));
