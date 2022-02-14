@@ -16,7 +16,7 @@ public class GetCommentByPostID_StepDef {
         catch (NullPointerException e)
         {
             System.out.println("This post doesn't have any comments in our database");
-            System.exit(1);
+            throw e;
         }
     }
 

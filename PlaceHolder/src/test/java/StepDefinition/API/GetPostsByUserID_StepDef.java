@@ -16,7 +16,7 @@ public class GetPostsByUserID_StepDef extends GetPostsByUserID_POM {
         catch (NullPointerException e)
         {
             System.out.println("This user doesn't have posts in our database");
-            System.exit(1);
+            throw e;
         }
     }
 }

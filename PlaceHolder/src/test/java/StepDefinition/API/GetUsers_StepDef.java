@@ -17,7 +17,7 @@ public class GetUsers_StepDef extends GetUserId_POM {
        catch (NumberFormatException e)
        {
            System.out.println("This username doesn't exist in our database");
-           System.exit(1);
+           throw e;
        }
    }
 
