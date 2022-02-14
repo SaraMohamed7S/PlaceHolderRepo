@@ -27,7 +27,12 @@ public class GetPostComments_POM {
     Matcher matcher;
 
     @Test(dependsOnGroups = "2ndStep_GetUserPosts" )
-    public List<Comment> getCommentsPerPost(List<Integer> postsList) {
+    public List<Comment> getCommentsPerPost(List<Integer> postsList)
+    {
+        // This method to get comments for list of posts
+        // 1- Loop over the list passed
+        // 2- for each id in the list retrieve the comments
+        // 3- Store the comments in the shared comments list
         comments_Per_Post = new ArrayList<>();
         commentsList = new ArrayList<>();
         int indexOfCommentList =0 ;
@@ -52,6 +57,8 @@ public class GetPostComments_POM {
     @Test(dependsOnMethods = "getCommentsPerPost")
     public void validateEmailsFormat(List<Comment> commentsList)
     {
+        // This method to validate the emails mentioned in each comment
+        // matcher method is user ( it accepts regular expression to verify vs )
         for (Comment comment : commentsList)
         {
             System.out.println("For comment Id "+ comment.getId());

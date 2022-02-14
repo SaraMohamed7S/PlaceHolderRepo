@@ -4,7 +4,6 @@ import PageObjectModel.API.GetUserId_POM;
 import PlaceHolder.common.SharedValues;
 import PlaceHolder.framework.PlaceHolderConfiguration;
 import io.cucumber.java.en.When;
-import org.testng.SkipException;
 
 public class GetUsers_StepDef extends GetUserId_POM {
 
