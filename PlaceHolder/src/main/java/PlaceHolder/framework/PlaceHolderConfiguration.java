@@ -1,4 +1,4 @@
-package placeHolder.framework;
+package PlaceHolder.framework;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
