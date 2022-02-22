@@ -2,8 +2,11 @@ package PageObjectModel.API;
 
 import PlaceHolder.common.EndPoints;
 import PlaceHolder.serelization.Post;
+import StepDefinition.API.GetUsers_StepDef;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,6 +17,7 @@ import static io.restassured.RestAssured.given;
 public class GetPostsByUserID_POM {
     int postIndex;
     ArrayList<Integer> postsList = new ArrayList<>();
+    Logger logger = LogManager.getLogger(GetPostsByUserID_POM.class);
 
     @Test (dependsOnGroups = "FirstStep_GetID" , groups = "2ndStep_GetUserPosts")
     public ArrayList<Integer> getPostsWithUserId(int userID) // pass user ID
@@ -30,7 +34,7 @@ public class GetPostsByUserID_POM {
         {
             postsList.add(postIndex , postsPerUserId.get(postIndex).getId());
         }
-        System.out.println("This user has the following posts ids "+ postsList);
+        logger.info("This user has the following posts ids "+ postsList);
         return postsList;
     }
 }

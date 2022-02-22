@@ -183,4 +183,5 @@ allure-results/
  debug.log
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,intellij!/allure-results/88eeafbf-3d1f-4f06-9776-7d487f373bcd-result.json
-
+!/PATH/TO/firstoutput.log
+!/logs/firstoutput.log
